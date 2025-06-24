@@ -26,7 +26,7 @@ Feature: Gestión de familias
     Then el sistema debe retornar un error indicando los campos faltantes o incorrectos
 
     Examples:
-      | nombre_familia | miembros | jefe_hogar |
+      | nombre_familia | miembros | jefe_hogar  |
       | Familia López  |          | Mario López |
       |                | 5        | Laura Díaz  |
       | Familia Ríos   | 2        |             |
