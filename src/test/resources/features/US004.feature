@@ -9,3 +9,5 @@ Feature: Notificación de gastos
       | umbral | monto_transaccion |
       | 500    | 600               |
       | 1000   | 1200              |
+
+

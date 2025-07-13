@@ -60,9 +60,10 @@ public class US011Steps {
         PlanesService.intentarCrearPlan(nombrePlan, monto, fechaLimite);
     }
 
-    @Then("el sistema debe retornar un error indicando los campos faltantes o incorrectos")
+    @Then("el sistema debe retornar un error indicando los campos faltantes o incorrectos en el plan financiero")
     public void errorPorCamposInvalidos() {
-        System.out.println("Sistema muestra error por datos inválidos");
+        System.out.println("Sistema muestra error por datos inválidos en el plan financiero");
         Assert.assertTrue(PlanesPage.isErrorMessageDisplayed());
     }
+
 }
