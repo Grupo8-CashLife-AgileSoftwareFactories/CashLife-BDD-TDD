@@ -17,3 +17,4 @@ Feature: Registro de usuario
       | tipo_usuario        | user   | pass     |
       | joven independiente | pablo  | pablo123 |
       | Jefe de Hogar       | pedro  | pedro123 |
+

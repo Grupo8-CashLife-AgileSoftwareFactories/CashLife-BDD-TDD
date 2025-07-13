@@ -32,3 +32,4 @@ Feature: Reporte de inflación personalizado
       | id_usuario |
       | U001       |
       | U099       |
+
