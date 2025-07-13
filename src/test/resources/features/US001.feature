@@ -12,3 +12,4 @@ Feature: "Authentificación de Usuario"
       | user         | pass         |
       | pablo        | pablo123     |
       | pedro        | pedro123     |
+

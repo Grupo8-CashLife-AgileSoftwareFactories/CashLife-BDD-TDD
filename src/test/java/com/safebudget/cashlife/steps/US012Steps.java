@@ -1,43 +1,27 @@
 package com.safebudget.cashlife.steps;
 
-import io.cucumber.java.en.And;
+import com.safebudget.cashlife.pages.ConsultasPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class US012Steps {
-    // Escenario 1: Enviar consulta correctamente
-    @Given("el usuario está en la sección de {string}")
+    @Given("el usuario está en la sección de consultas {string}")
     public void usuarioEnSeccionConsultas(String seccion) {
-        System.out.println("Usuario entra en la sección: " + seccion);
-        // ConsultasPage.open(seccion);
+        System.out.println("Usuario navega a la sección de consultas: " + seccion);
+        ConsultasPage.openSection(seccion);
     }
 
-    @When("el usuario ingresa su consulta {string} en el campo {string} y selecciona {string}")
-    public void ingresarConsultaYEnviar(String mensaje, String campo, String boton) {
-        System.out.printf("Usuario escribe: \"%s\" en %s y presiona %s%n", mensaje, campo, boton);
-        // ConsultasPage.writeMessage(mensaje);
-        // ConsultasPage.clickButton(boton);
+    @When("el usuario realiza una consulta de {string}")
+    public void realizarConsulta(String tipoConsulta) {
+        System.out.println("Usuario realiza consulta de: " + tipoConsulta);
+        ConsultasPage.performQuery(tipoConsulta);
     }
 
-    @Then("el sistema confirmará que la consulta fue recibida")
-    public void confirmarRecepcionConsulta() {
-        System.out.println("Sistema confirma que la consulta fue recibida");
-    }
-
-    @And("mostrará el mensaje {string}")
-    public void mostrarMensajeExito(String mensaje) {
-        System.out.println("Sistema muestra mensaje: " + mensaje);
-    }
-
-    // Escenario 2: Error por campo vacío
-    @When("el usuario deja el campo {string} vacío o ingresa {string}")
-    public void dejarCampoVacio(String campo, String mensaje) {
-        System.out.printf("Campo %s está vacío o contiene: \"%s\"%n", campo, mensaje);
-    }
-
-    @Then("el sistema mostrará el mensaje {string}")
-    public void mostrarMensajeError(String mensaje) {
-        System.out.println("Sistema muestra mensaje de error: " + mensaje);
+    @Then("el sistema mostrará los resultados de la consulta")
+    public void mostrarResultadosConsulta() {
+        System.out.println("Sistema muestra resultados de la consulta");
+        Assert.assertTrue(ConsultasPage.isResultsVisible());
     }
 }
